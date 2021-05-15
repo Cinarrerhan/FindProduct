@@ -1,0 +1,2 @@
+<app-product-search [query]="searchQuery$ | async" [searching]="loading$ | async" (search)="search($event)"></app-product-search>
+<app-product-preview-list [products]="products$ | async"></app-product-preview-list>

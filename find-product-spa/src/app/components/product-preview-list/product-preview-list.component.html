@@ -1,0 +1,13 @@
+<a *ngFor="let product of products">
+    <mat-card>
+        <mat-card-title-group>
+            <mat-card-title>{{product.ProductName | bcEllipsis:35}}</mat-card-title>
+            <img mat-card-sm-image *ngIf="product.MarketLogoUrl" [src]="product.MarketLogoUrl">
+        </mat-card-title-group>
+        <mat-card-content>
+            <img mat-card-sm-image *ngIf="product.ProductImageUrl" [src]="product.ProductImageUrl.startsWith('http') || product.ProductImageUrl.startsWith('//') ? product.ProductImageUrl : product.MarketBaseUrl+product.ProductImageUrl ">
+            <p *ngIf="product.ProductPrice"><strong>Fiyat :</strong>{{product.ProductPrice}}</p>
+        </mat-card-content>
+    </mat-card>
+</a>
+

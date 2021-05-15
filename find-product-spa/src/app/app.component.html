@@ -1,0 +1,11 @@
+<app-layout>
+    <app-sidenav [open]="showSidenav$ | async">
+        <app-nav-item (activate)="closeSidenav()" routerLink="/product/find" icon="search" hint="Ürün Araması yap">
+            Ürün Ara
+        </app-nav-item>
+    </app-sidenav>
+    <app-toolbar (openMenu)="openSidenav()">
+        Ürün Listesi
+    </app-toolbar>
+    <router-outlet></router-outlet>
+</app-layout>
